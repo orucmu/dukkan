@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { SafeAreaView, Text, FlatList } from "react-native";
 import Config from 'react-native-config';
 import axios from "axios";
+import ProductCard from '../../components/ProductCard';
 
 
 const Products = () => {
@@ -17,7 +18,7 @@ const Products = () => {
     };
 
 
-    const renderProduct = ({ item }) => <Text>{item.title}</Text>
+    const renderProduct = ({ item }) => <ProductCard product={item}/>
 
     return (
         <SafeAreaView>

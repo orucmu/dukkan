@@ -16,3 +16,5 @@ const ProductCard = ({product}) => {
         </View>
     )
 }
+
+export default ProductCard;
