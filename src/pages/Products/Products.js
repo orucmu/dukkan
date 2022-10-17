@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { SafeAreaView, Text, FlatList, ActivityIndicator } from "react-native";
 import Config from 'react-native-config';
-import axios from "axios";
+import Loading from "../../components/Loading/Loading";
+import Error from "../../components/Error/Error";
 import ProductCard from '../../components/ProductCard';
 import useFetch from "../../hooks/useFetch/useFetch";
 
@@ -12,11 +13,11 @@ const Products = () => {
     const renderProduct = ({ item }) => <ProductCard product={item}/>
 
     if(loading){
-        return <ActivityIndicator size="large" />
+        return <Loading />
     }
 
     if(error){
-       return <Text>{error}</Text>
+       return <Error />
     }
 
     return (
